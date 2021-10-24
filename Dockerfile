@@ -23,5 +23,6 @@ FROM node:erbium-alpine
 WORKDIR /usr/src/app
 COPY --from=build /usr/src/app/build .
 USER node
-EXPOSE 4000
+ENV PORT=8080
+EXPOSE 8080
 ENTRYPOINT ["node", "dist/main"]
